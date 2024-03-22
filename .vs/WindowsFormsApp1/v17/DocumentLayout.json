@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0BBEC1AC-BF36-4512-8501-557D5B01702C}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BBEC1AC-BF36-4512-8501-557D5B01702C}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BBEC1AC-BF36-4512-8501-557D5B01702C}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0BBEC1AC-BF36-4512-8501-557D5B01702C}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\gui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|solutionrelative:gui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|solutionrelative:gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|c:\\users\\ul0255587\\desktop\\sw-project\\projectsw\\windowsformsapp1\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC3E8434-D911-42FE-B7CA-D26E91DC5EC5}|WindowsFormsApp1.csproj|solutionrelative:gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
-              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "GUI.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.Designer.cs",
+              "RelativeDocumentMoniker": "GUI.Designer.cs",
+              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.Designer.cs",
+              "RelativeToolTip": "GUI.Designer.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCcAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:25:49.064Z",
+              "WhenOpened": "2024-03-22T22:59:41.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentIndex": 2,
+              "Title": "GUI.cs",
+              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.cs",
+              "RelativeDocumentMoniker": "GUI.cs",
+              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.cs",
+              "RelativeToolTip": "GUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:23:53.634Z",
+              "WhenOpened": "2024-03-22T22:56:22.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cs",
+              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\main.cs",
+              "RelativeDocumentMoniker": "main.cs",
+              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\main.cs",
+              "RelativeToolTip": "main.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAADwv3AAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T22:55:37.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.cs",
+              "RelativeDocumentMoniker": "GUI.cs",
+              "ToolTip": "C:\\Users\\UL0255587\\Desktop\\sw-project\\ProjectSW\\WindowsFormsApp1\\GUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "GUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T22:54:17.193Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
