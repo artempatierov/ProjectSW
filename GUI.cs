@@ -15,5 +15,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void GUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
