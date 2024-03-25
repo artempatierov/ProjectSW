@@ -9,16 +9,27 @@ using System.Windows.Forms;
 namespace MonopolyGame
 {
     
-    internal static class main
+    internal class main
     {
         [STAThread]
 
-        static void Main()
+        static public void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowsFormsApp1.GUI());
+            var ui = new WindowsFormsApp1.GUI();
+            Application.Run(ui);
+
+            
         }
+
+        public void GoTo(int x)
+        {
+            var ui = new WindowsFormsApp1.GUI();
+            ui.GoTo();
+        }
+
+
 
         const int WIDTH = 155;
         const int HEIGHT = 55;

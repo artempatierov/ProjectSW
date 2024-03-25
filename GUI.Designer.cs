@@ -52,6 +52,10 @@
             // 
             // Start
             // 
+            this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Start.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Start.Location = new System.Drawing.Point(526, 521);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(78, 86);
@@ -59,6 +63,10 @@
             // 
             // Gracz
             // 
+            this.Gracz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Gracz.BackColor = System.Drawing.SystemColors.Highlight;
             this.Gracz.Location = new System.Drawing.Point(427, 313);
             this.Gracz.Name = "Gracz";
             this.Gracz.Size = new System.Drawing.Size(39, 40);
@@ -97,8 +105,8 @@
 
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Start;
-        private System.Windows.Forms.PictureBox Gracz;
+        public System.Windows.Forms.Panel Start;
+        public System.Windows.Forms.PictureBox Gracz;
         private System.Windows.Forms.Button button1;
     }
 }
