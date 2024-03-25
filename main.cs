@@ -1,11 +1,25 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+
 
 namespace MonopolyGame
 {
-    class main
+    
+    internal static class main
     {
+        [STAThread]
+
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new WindowsFormsApp1.GUI());
+        }
+
         const int WIDTH = 155;
         const int HEIGHT = 55;
         const int DICE = 10;
@@ -106,54 +120,6 @@ namespace MonopolyGame
         static int ThrowADiceTwo()
         {
             return RandomDice();
-        }
-
-        static void Main(string[] args)
-        {
-            IntPtr h = GetStdHandle(STD_OUTPUT_HANDLE);
-            Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            bool isRunning = true;
-            bool move = true;
-            short takeATurn = 0;
-            int diceOne = 0;
-            int diceTwo = 0;
-            int diceTotal = 0;
-            int diceTotalComp = 0;
-            int accumulator = 0;
-            int accumulatorComp = 0;
-            int moneyPlayer = 1500;
-            int moneyComputer = 1500;
-            int propertyPlayer = 0;
-            int propertyComputer = 0;
-            int propertyBuy = 0;
-            int turn = RandomStart();
-            int game;
-
-            Console.WriteLine("                                                                                    W E L C O M E  TO  M O N O P O L Y");
-            Console.WriteLine("\n\n                                                                                          Would you like to play?");
-            Console.WriteLine("\n                                                                                           PRESS  [1]-Yes [0]-No ");
-            game = Convert.ToInt32(Console.ReadLine());
-
-            if (game == 0)
-            {
-                Console.Clear();
-                GotoXY(100, 10);
-                Console.WriteLine("You Exited the Game!");
-                return;
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine(map);
-            }
-
-            while (isRunning)
-            {
-                // Gameplay logic here...
-            }
         }
     }
 }
