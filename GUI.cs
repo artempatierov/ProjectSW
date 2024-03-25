@@ -18,6 +18,11 @@ namespace WindowsFormsApp1
 
         private void GUI_Load(object sender, EventArgs e)
         {
+            Gracz.Location = Start.Location;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
