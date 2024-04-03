@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         public void GoTo()
         {
-            Gracz.Location = Start.Location;
+            //Gracz.Location = Start.Location;
         }
     }
 }
