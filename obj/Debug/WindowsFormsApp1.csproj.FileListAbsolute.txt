@@ -7,3 +7,4 @@ C:\Users\UL0255587\Desktop\sw-project\ProjectSW\WindowsFormsApp1\bin\Debug\Windo
 C:\Users\UL0255587\Desktop\sw-project\ProjectSW\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\UL0255587\Desktop\sw-project\ProjectSW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\UL0255587\Desktop\sw-project\ProjectSW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\UL0255587\Desktop\sw-project\ProjectSW\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config

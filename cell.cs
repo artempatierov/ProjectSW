@@ -5,9 +5,14 @@ using System.Text;
 
 namespace WindowsFormsApp1
 {
-    internal class cell
+    internal class Cell
     {
         enum fieldType { Property, Action }
+        int id;
+
+        public Cell() { id = 4; } // test
+
+        public int getId() { return id; }
 
     }
 }

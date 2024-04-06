@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="action.cs" />
+    <Compile Include="BoardManager.cs" />
     <Compile Include="cell.cs" />
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
@@ -55,6 +56,8 @@
       <DependentUpon>GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs" />
+    <Compile Include="player.cs" />
+    <Compile Include="playersManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>

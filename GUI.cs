@@ -22,17 +22,17 @@ namespace WindowsFormsApp1
 
         private void GUI_Load(object sender, EventArgs e)
         {
-
+            Action.GoTo(0, 4);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void GoTo(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
         {
-            action.GoTo(1);
+            user.Location = cell.Location;
         }
 
-        public void GoTo()
+        private void AI_bot_1_Click(object sender, EventArgs e)
         {
-            //Gracz.Location = Start.Location;
+
         }
     }
 }

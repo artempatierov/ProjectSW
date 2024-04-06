@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 
 namespace MonopolyGame
@@ -18,16 +19,13 @@ namespace MonopolyGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var ui = new WindowsFormsApp1.GUI();
+            var pManager = new PlayersManager();
+            var bManager = new BoardManager();
             Application.Run(ui);
 
-            
         }
 
-        public void GoTo(int x)
-        {
-            var ui = new WindowsFormsApp1.GUI();
-            ui.GoTo();
-        }
+        
 
 
 
