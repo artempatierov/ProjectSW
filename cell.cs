@@ -9,8 +9,14 @@ namespace WindowsFormsApp1
     {
         enum fieldType { Property, Action }
         int id;
+        System.Windows.Forms.PictureBox field;
 
-        public Cell() { id = 4; } // test
+        public Cell(int id)
+        {
+            var ui = WindowsFormsApp1.GUI.UI;
+            this.id = id;
+            field = Extensions.GetElementByTabIndex(id);
+        }
 
         public int getId() { return id; }
 

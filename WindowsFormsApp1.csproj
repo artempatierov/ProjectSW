@@ -49,6 +49,7 @@
     <Compile Include="action.cs" />
     <Compile Include="BoardManager.cs" />
     <Compile Include="cell.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>

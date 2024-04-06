@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         int id;
         public float money;
 
-        public Player() { id = 0; } //test
+        public Player(int id) { this.id = id; }
         public int getId() { return id; }
     }
 }

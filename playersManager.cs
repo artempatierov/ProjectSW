@@ -10,7 +10,10 @@ namespace WindowsFormsApp1
         {
             //fill players
             m_playersManager = this;
-            players[0] = new Player(); // test
+            for (int i = 0; i < 4; i++)
+            {
+                players[i] = new Player(i);
+            }
         }
 
         public Player findPlayerById(int userId)

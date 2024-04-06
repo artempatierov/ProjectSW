@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void GUI_Load(object sender, EventArgs e)
         {
-            Action.GoTo(0, 4);
+            Action.GoTo(0, 21);
         }
 
         public void GoTo(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
