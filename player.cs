@@ -12,10 +12,10 @@ namespace WindowsFormsApp1
         int id;
         public float money;
 
-        public Player(int id,float money) 
+        public Player(int id) 
         { 
             this.id = id;
-            this.money = 1500;
+            money = 1500;
         }
         public int getId() { return id; }
     }
