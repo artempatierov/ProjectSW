@@ -1043,6 +1043,7 @@
             this.dice.TabIndex = 48;
             this.dice.Text = "Rzuć Kośćmi";
             this.dice.UseVisualStyleBackColor = true;
+            this.dice.Click += new System.EventHandler(this.dice_Click);
             // 
             // money4
             // 

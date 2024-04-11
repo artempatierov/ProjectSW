@@ -11,6 +11,7 @@ namespace WindowsFormsApp1
     {
         int id;
         public float money;
+        public int cellId = 0;
 
         public Player(int id) 
         { 

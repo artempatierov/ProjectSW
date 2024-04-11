@@ -30,9 +30,22 @@ namespace WindowsFormsApp1
         }
 
         static Random random = new Random();
-        public static int RandomDice()
+        public static int RollDice()
         {
-            return random.Next(2, 12);
+            int licznik_wieznia = 0;
+            int kosc_1= random.Next(1, 6);
+            int kosc_2= random.Next(1, 6);
+            if(kosc_1 == kosc_2)
+            {
+                Console.WriteLine("Dublet!");
+                    //zamiast tej konsoli dodać okienko popup
+                licznik_wieznia++;
+                if (licznik_wieznia > 2)
+                {
+                    //Player.idziesz_do_paki_hehe();
+                }
+            }
+            return kosc_1 + kosc_2;
         }
 
         public static int RandomStart(int userId)
