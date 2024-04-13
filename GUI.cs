@@ -22,10 +22,10 @@ namespace WindowsFormsApp1
 
         private void GUI_Load(object sender, EventArgs e)
         {
-            Action.GoTo(0, 15);
-            Action.GoTo(1, 15);
-            Action.GoTo(2, 15);
-            Action.GoTo(3, 15);
+            Action.GoTo(0, 0);
+            Action.GoTo(1, 0);
+            Action.GoTo(2, 0);
+            Action.GoTo(3, 0);
         }
 
         public void GoTo(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
@@ -50,6 +50,18 @@ namespace WindowsFormsApp1
                     break;
             }
             user.Location = new Point(x, y);
+        }
+        private void dice_Click(object sender, EventArgs e)
+        {
+            int wynik= Action.RollDice();
+            var p_Manager = PlayersManager.m_playersManager;
+            //var b_Manager = BoardManager.m_boardManager;
+            Player user = p_Manager.findPlayerById(0);
+            user.cellId += wynik;
+            user.cellId %= 40;
+            Action.GoTo(user.getId(), user.cellId);//TODO wyciągnięcie PlayerId oraz dodać wynik do CellId
+            String wynik_txt=wynik.ToString();
+            MessageBox.Show(wynik_txt);
         }
     }
 }
