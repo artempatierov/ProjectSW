@@ -5,6 +5,7 @@ namespace WindowsFormsApp1
     internal class PlayersManager
     {
         public static PlayersManager m_playersManager { get; private set; }
+        int g_CurrentPlayerIndex = 0;
         public static Player[] players = new Player[4];
         public PlayersManager()
         {
@@ -14,6 +15,16 @@ namespace WindowsFormsApp1
             {
                 players[i] = new Player(i);
             }
+        }
+
+        public void setCurrentPlayerIndex(int index)
+        {
+            g_CurrentPlayerIndex = index;
+        }
+
+        public int getCurrentPlayerIndex()
+        {
+            return g_CurrentPlayerIndex;
         }
 
         public Player findPlayerById(int userId)

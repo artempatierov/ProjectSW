@@ -16,11 +16,11 @@ namespace MonopolyGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var ui = new WindowsFormsApp1.GUI();
+            var ui = new GUI();
             var pManager = new PlayersManager();
             var bManager = new BoardManager();
             Application.Run(ui);
-
         }
+
     }
 }

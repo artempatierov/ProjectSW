@@ -53,17 +53,12 @@ namespace WindowsFormsApp1
             return userId=random.Next(1, 4);
         }
 
-        public static int NextPlayer(int userId)
+        public static void NextPlayer()
         {
-            userId += 1;
-            if (userId > 4)
-            {
-                return userId = 1;
-            }
-            else
-            {
-                return userId;
-            }
+            var p_Manager = PlayersManager.m_playersManager;
+            int index = p_Manager.getCurrentPlayerIndex();
+            index++;
+            p_Manager.setCurrentPlayerIndex(index % 4);
         }
     }
 }

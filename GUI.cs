@@ -55,13 +55,14 @@ namespace WindowsFormsApp1
         {
             int wynik= Action.RollDice();
             var p_Manager = PlayersManager.m_playersManager;
-            //var b_Manager = BoardManager.m_boardManager;
-            Player user = p_Manager.findPlayerById(0);
+
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             user.cellId += wynik;
             user.cellId %= 40;
-            Action.GoTo(user.getId(), user.cellId);//TODO wyciągnięcie PlayerId oraz dodać wynik do CellId
+            Action.GoTo(user.getId(), user.cellId);
             String wynik_txt=wynik.ToString();
             MessageBox.Show(wynik_txt);
+            Action.NextPlayer();
         }
     }
 }
