@@ -5,7 +5,7 @@ namespace WindowsFormsApp1
     internal class PlayersManager
     {
         public static PlayersManager m_playersManager { get; private set; }
-        int g_CurrentPlayerIndex = 0;
+        int g_CurrentPlayerIndex = 0; // TOD: implement 
         public static Player[] players = new Player[4];
         public PlayersManager()
         {

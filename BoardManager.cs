@@ -29,8 +29,7 @@ namespace WindowsFormsApp1
 
         public static System.Windows.Forms.PictureBox cellToObject(Cell cell)
         {
-            //var ui = WindowsFormsApp1.GUI.UI;
-            return Extensions.GetElementByTabIndex(cell.getId());
+            return cell.getField();
         }
     }
 }

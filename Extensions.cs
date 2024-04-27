@@ -22,5 +22,30 @@ namespace WindowsFormsApp1
             }
             return null;
         }
+
+        public static Label GetLabelByName(string name)
+        {
+            var ui = GUI.UI;
+            foreach (Control control in ui.Controls)
+            {
+                if (control.Name == name)
+                {
+                    return control as Label;
+                }
+            }
+            return null;
+        }
+
+        public static void LoadMoney()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            String name = "money";
+            for (int i = 0; i < 4 ; i++)
+            {
+                Label money = GetLabelByName(name + (i+1).ToString());
+                Player user = p_Manager.findPlayerById(i);
+                money.Text = user.getMoney().ToString();
+            }
+        }
     }
 }

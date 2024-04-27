@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -9,7 +10,7 @@ namespace WindowsFormsApp1
     {
         enum fieldType { Property, Action }
         int id;
-        System.Windows.Forms.PictureBox field;
+        PictureBox field;
 
         public Cell(int id)
         {
@@ -19,6 +20,7 @@ namespace WindowsFormsApp1
         }
 
         public int getId() { return id; }
+        public PictureBox getField() { return field; }
 
     }
 }

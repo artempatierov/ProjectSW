@@ -22,10 +22,7 @@ namespace WindowsFormsApp1
 
         private void GUI_Load(object sender, EventArgs e)
         {
-            Action.GoTo(0, 0);
-            Action.GoTo(1, 0);
-            Action.GoTo(2, 0);
-            Action.GoTo(3, 0);
+            Extensions.LoadMoney();
         }
 
         public void GoTo(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
@@ -53,16 +50,9 @@ namespace WindowsFormsApp1
         }
         private void dice_Click(object sender, EventArgs e)
         {
-            int wynik= Action.RollDice();
-            var p_Manager = PlayersManager.m_playersManager;
-
-            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
-            user.cellId += wynik;
-            user.cellId %= 40;
-            Action.GoTo(user.getId(), user.cellId);
-            String wynik_txt=wynik.ToString();
-            MessageBox.Show(wynik_txt);
-            Action.NextPlayer();
+            //String wynik_txt=wynik.ToString();
+            //MessageBox.Show(wynik_txt);
+            Action.ProcessMove();
         }
     }
 }

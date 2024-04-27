@@ -19,38 +19,27 @@ namespace WindowsFormsApp1
             System.Windows.Forms.PictureBox cellObj = BoardManager.cellToObject(cell);
             ui.GoTo(userObj, cellObj);
         }
-        
-        public static void BuyProperty(int userId,int cellId,int cena)
+
+        public static void BuyProperty(int userId, int cellId, int cena)
         {
             //spr czy to pole do kogoś należy
-                //jeśli tak, to wyłączyć (wygaśić) opcję kupna
-                //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
-                    //jeśli wykracza to nie można kupić
-                    //jeśli nie to pole kupione
+            //jeśli tak, to wyłączyć (wygaśić) opcję kupna
+            //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
+            //jeśli wykracza to nie można kupić
+            //jeśli nie to pole kupione
         }
 
         static Random random = new Random();
         public static int RollDice()
         {
-            int licznik_wieznia = 0;
-            int kosc_1= random.Next(1, 6);
-            int kosc_2= random.Next(1, 6);
+            int kosc_1 = random.Next(1, 6);
+            int kosc_2 = random.Next(1, 6);
             if(kosc_1 == kosc_2)
             {
                 Console.WriteLine("Dublet!");
-                    //zamiast tej konsoli dodać okienko popup
-                licznik_wieznia++;
-                if (licznik_wieznia > 2)
-                {
-                    //Player.idziesz_do_paki_hehe();
-                }
+                return (kosc_1 + kosc_2) * -1;
             }
             return kosc_1 + kosc_2;
-        }
-
-        public static int RandomStart(int userId)
-        {
-            return userId=random.Next(1, 4);
         }
 
         public static void NextPlayer()
@@ -59,6 +48,50 @@ namespace WindowsFormsApp1
             int index = p_Manager.getCurrentPlayerIndex();
             index++;
             p_Manager.setCurrentPlayerIndex(index % 4);
+        }
+
+        public static bool ProcessMove()
+        {
+            Extensions.LoadMoney();
+            int wynik = -1;
+            var p_Manager = PlayersManager.m_playersManager;
+
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            if (user.getDoubletCount() == 0) { 
+                NextPlayer();
+                user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            }
+
+            wynik = RollDice();
+            if (user.getDoubletCount() == 2)
+            {
+                GoTo(user.getId(), 10);
+                user.setDoubletCount(0);
+                // POPUP: 3 dublet 
+                return true;
+            }
+            if (wynik < 0)
+            {
+                user.cellId += (wynik * -1);
+                user.addDoublet();
+            }
+            else
+            {
+                user.cellId += wynik;
+                user.setDoubletCount(0);
+            }
+
+            if (user.cellId % 40 < user.cellId)
+            {
+                user.addMoney(200);
+            }
+            user.cellId %= 40;
+            GoTo(user.getId(), user.cellId);
+
+
+
+
+            return true;
         }
     }
 }
