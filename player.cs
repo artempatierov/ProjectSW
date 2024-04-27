@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         public float money;
         public int cellId = 0;
         int doubletCount = 0;
+        int inJail = 0;
 
         public Player(int id) 
         { 
@@ -32,6 +33,20 @@ namespace WindowsFormsApp1
         public void setDoubletCount(int count) {  doubletCount = count; }
 
         public void addDoublet() {  doubletCount++; }
+
+        public int getInJail() {  return inJail; }
+
+        public void setInJail() { inJail = 2; }
+
+        public bool decreseJail()
+        {
+            if (inJail > 0)
+            {
+                inJail--;
+                return true;
+            }
+            return false;
+        }
 
     }
 }

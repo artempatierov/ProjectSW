@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -18,6 +19,14 @@ namespace WindowsFormsApp1
             Cell cell = b_Manager.findCellById(cellId);
             System.Windows.Forms.PictureBox cellObj = BoardManager.cellToObject(cell);
             ui.GoTo(userObj, cellObj);
+        }
+
+        public static void GoToJail(Player user)
+        {
+            user.cellId = 10;
+            user.setDoubletCount(0);
+            user.setInJail();
+            GoTo(user.getId(), 10);
         }
 
         public static void BuyProperty(int userId, int cellId, int cena)
@@ -56,18 +65,27 @@ namespace WindowsFormsApp1
             int wynik = -1;
             var p_Manager = PlayersManager.m_playersManager;
 
+            if (p_Manager.getCurrentPlayerIndex() == -1)
+            {
+                p_Manager.setCurrentPlayerIndex(0);
+            }
+
             Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             if (user.getDoubletCount() == 0) { 
                 NextPlayer();
                 user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             }
+            if (user.decreseJail())
+            {
+                return true;
+            }
 
             wynik = RollDice();
             if (user.getDoubletCount() == 2)
             {
-                GoTo(user.getId(), 10);
-                user.setDoubletCount(0);
-                // POPUP: 3 dublet 
+                var ui = GUI.UI;
+                MessageBox.Show("3 Dublet, Go To Jail");
+                GoToJail(user);
                 return true;
             }
             if (wynik < 0)

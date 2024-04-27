@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -22,7 +23,6 @@ namespace WindowsFormsApp1
 
         public Cell findCellById(int cellId)
         {
-            //var ui = WindowsFormsApp1.GUI.UI;
             Console.WriteLine("findCellById: " + cellId);
             return cells[cellId];
         }
@@ -30,6 +30,20 @@ namespace WindowsFormsApp1
         public static System.Windows.Forms.PictureBox cellToObject(Cell cell)
         {
             return cell.getField();
+        }
+
+        public void checkField(Cell cell)
+        {
+            int cellId = cell.getId();
+            var p_Manager = PlayersManager.m_playersManager;
+            int currentUserIndex = p_Manager.getCurrentPlayerIndex();
+            Player player = p_Manager.findPlayerById (currentUserIndex);
+
+            if (cellId == 30)
+            {
+                MessageBox.Show("Go To Jail");
+                Action.GoToJail(player);
+            }
         }
     }
 }

@@ -50,9 +50,8 @@ namespace WindowsFormsApp1
         }
         private void dice_Click(object sender, EventArgs e)
         {
-            //String wynik_txt=wynik.ToString();
-            //MessageBox.Show(wynik_txt);
             Action.ProcessMove();
+
         }
     }
 }
