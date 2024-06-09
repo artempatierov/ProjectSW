@@ -29,13 +29,40 @@ namespace WindowsFormsApp1
             GoTo(user.getId(), 10);
         }
 
-        public static void BuyProperty(int userId, int cellId, int cena)
+        //spr czy to pole do kogoś należy
+        //jeśli tak, MessageBox z info czyje to pole
+        //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
+        //jeśli wykracza to nie można kupić
+        //jeśli nie to pole kupione
+        public static void BuyProperty(Cell pole, Player user,Property property)
         {
-            //spr czy to pole do kogoś należy
-            //jeśli tak, to wyłączyć (wygaśić) opcję kupna
-            //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
-            //jeśli wykracza to nie można kupić
-            //jeśli nie to pole kupione
+        if(user.getCellId()==pole.getId() && pole.getId()==property.getPropId())//Czy gracz stoi na polu
+            {
+                if (property.getPlayerOwnerId() == -1)//Czy pole jest niczyje
+                {
+                    if (property.getPropPrice() > user.getMoney())//Czy cena pola nie jest większa niż stan konta gracza
+                    {
+                        MessageBox.Show("Niewystarczające środki!!!");
+                    }
+                    else
+                    {
+                        property.setPlayerOwnerId(user.getId());
+                        user.setMoney(user.getMoney() - property.getPropPrice());
+                        MessageBox.Show("Pole Zakupione");
+                        property.setVisible(true);
+                    }
+                }
+                else
+                {
+                    if(property.getPlayerOwnerId() == user.getId())
+                    MessageBox.Show("Pole należy do: "+user.getName());
+                }
+            }
+        }
+
+        public static void PropertySwap(Player player1,Player player2,Property property1, Property property2)
+        {
+
         }
 
         static Random random = new Random();
@@ -58,7 +85,15 @@ namespace WindowsFormsApp1
             index++;
             p_Manager.setCurrentPlayerIndex(index % 4);
         }
-
+        public void PrintDetails(Property property, Player user)
+        {
+            MessageBox.Show("---Właściwości Posiadłości---" +
+                "\nNazwa:" + property.getPropName() +
+                "\nCena podstawowa:" + property.getPropPrice() +
+                "\nWłaściciel:" + user.getName() +
+                "\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
+                );
+        }
         public static bool ProcessMove()
         {
             Extensions.LoadMoney();
@@ -105,9 +140,6 @@ namespace WindowsFormsApp1
             }
             user.cellId %= 40;
             GoTo(user.getId(), user.cellId);
-
-
-
 
             return true;
         }

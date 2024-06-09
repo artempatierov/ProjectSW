@@ -51,7 +51,16 @@ namespace WindowsFormsApp1
         private void dice_Click(object sender, EventArgs e)
         {
             Action.ProcessMove();
+        }
 
+        private void info_Click(object sender, EventArgs e)
+        {
+            //Action.PrintDetails(); <-- do poprawy
+        }
+
+        private void buy_Click(object sender, EventArgs e)
+        {
+            //Action.BuyProperty();
         }
     }
 }
