@@ -10,22 +10,43 @@ namespace WindowsFormsApp1
     internal class Player
     {
         int id;
-        public float money;
+        public double money;
         public int cellId = 0;
         int doubletCount = 0;
         int inJail = 0;
-
+        public string name;
+        
         public Player(int id) 
         { 
             this.id = id;
             setMoney(1500);
+            setName(id);
         }
         public int getId() { return id; }
 
-        public float getMoney() { return money;}
+        public double getMoney() { return money;}
         public int getCellId() {  return cellId;}
+        public string getName() { return name;}
+        public void setName(int id) {
+            if (id == 0)
+            {
+                name = "Mr. Smith";
+            }
+            else if (id == 1)
+            {
+                name = "Gov. Richmount";
+            }
+            else if (id == 2)
+            {
+                name = "Gen. Winchester";
+            }
+            else if (id == 3)
+            {
+                name = "Mr. Goldberg";
+            };
+        }
 
-        void setMoney(int amount) {  money = amount; }
+        public void setMoney(double amount) {  money = amount; }
         public void addMoney(int amount) { money += amount; }
 
         public int getDoubletCount() {  return doubletCount; }
