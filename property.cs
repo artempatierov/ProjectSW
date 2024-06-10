@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         int player_owner_id;
         Label label;
 
-        public Property(int id,string name, double price, int player_owner_id)
+        public Property(int id,string name, double price)
         {
             this.id= id;
             this.name = name;
@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             this.upgrade_level = 0;
             this.upgrade_price = price * 0.25;
             this.player_owner_id = -1;
+            label = Extensions.GetLabelByTabId(id+100);
         }
 
         public int getPropId() { return id; }

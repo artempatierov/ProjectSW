@@ -19,7 +19,7 @@ namespace MonopolyGame
             var ui = new GUI();
             var pManager = new PlayersManager();
             var bManager = new BoardManager();
-            var prManager = new WindowsFormsApp1.PropertyManager();
+            //var prManager = new WindowsFormsApp1.PropertyManager();
 
             Application.Run(ui);
         }
