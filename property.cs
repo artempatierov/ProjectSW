@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
             this.name = name;
             this.price = price;
             this.upgrade_level = 0;
-            this.upgrade_price = price * 0.15;
+            this.upgrade_price = price * 0.25;
             this.player_owner_id = -1;
         }
 
@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
 
 
         public double getPropUpgradePrice() { return upgrade_price; }
-        public void setPropUpgradePrice() { upgrade_price = this.price * 0.25; }
+        public void setPropUpgradePrice() { upgrade_price = this.upgrade_price * 1.25; }
 
 
         public int getPlayerOwnerId() { return player_owner_id; }

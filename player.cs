@@ -47,7 +47,9 @@ namespace WindowsFormsApp1
         }
 
         public void setMoney(double amount) {  money = amount; }
-        public void addMoney(int amount) { money += amount; }
+        public void addMoney(double amount) { money += amount; }
+
+        public void removeMoney(double amount) { money -= amount; }
 
         public int getDoubletCount() {  return doubletCount; }
 

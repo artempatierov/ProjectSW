@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
                     else
                     {
                         property.setPlayerOwnerId(user.getId());
-                        user.setMoney(user.getMoney() - property.getPropPrice());
+                        user.removeMoney(property.getPropPrice());
                         MessageBox.Show("Pole Zakupione");
                         property.setVisible(true);
                     }
@@ -99,6 +99,7 @@ namespace WindowsFormsApp1
             Extensions.LoadMoney();
             int wynik = -1;
             var p_Manager = PlayersManager.m_playersManager;
+            var b_Manager = BoardManager.m_boardManager;
 
             if (p_Manager.getCurrentPlayerIndex() == -1)
             {
@@ -140,6 +141,8 @@ namespace WindowsFormsApp1
             }
             user.cellId %= 40;
             GoTo(user.getId(), user.cellId);
+            Cell cell = b_Manager.findCellById(user.cellId);
+            b_Manager.checkField(cell);
 
             return true;
         }

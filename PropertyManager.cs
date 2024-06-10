@@ -10,15 +10,26 @@ namespace WindowsFormsApp1
     internal class PropertyManager
     {
         public static PropertyManager m_PropertyManager { get; private set; }
-        public static Property[] properties= new Property[22];//40 pol - 4 kwadraty - 8 do oplaty, 3xSkrzynka, 3xSzansa
+        public static Property[] properties= new Property[40];//40 pol - 4 kwadraty - 8 do oplaty, 3xSkrzynka, 3xSzansa
         public static string[] nazwy = Extensions.GetPropNameTable();//22 elem. tablica nazw
         public PropertyManager()
         {
             //fill Properties
             m_PropertyManager = this;
-            for (int i = 0; i < 22; i++)
+            var b_Manager = BoardManager.m_boardManager;
+            int j = 0;
+            for (int i = 0; i < 40; i++)
             {
-                properties[i] = new Property(i, nazwy[i], i * 50 + i * 100 / 2, -1);
+                Cell cell = b_Manager.findCellById(i);
+                if (cell.getCellType() == Cell.fieldType.Property)
+                {
+                    properties[i] = new Property(i, nazwy[j], i * 50 + i * 100 / 2, -1);
+                    j++;
+                }
+                else
+                {
+                    properties[i] = null;
+                }
             }
         }
 
