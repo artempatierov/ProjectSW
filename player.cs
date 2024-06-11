@@ -68,8 +68,12 @@ namespace WindowsFormsApp1
                 inJail--;
                 return true;
             }
-            inJail--;
             return false;
+        }
+
+        public void addFreeJailExit()
+        {
+            inJail--;
         }
 
         public void increaseJail()

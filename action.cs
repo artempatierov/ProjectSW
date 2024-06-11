@@ -147,7 +147,7 @@ namespace WindowsFormsApp1
                 case 5
                     :
                     MessageBox.Show("Darmowe wyjście z Więzienia!\nCo za Szczęście!");
-                    player.decreseJail();
+                    player.addFreeJailExit();
                     break;
             }
         }
