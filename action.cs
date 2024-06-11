@@ -23,10 +23,16 @@ namespace WindowsFormsApp1
 
         public static void GoToJail(Player user)
         {
-            user.cellId = 10;
-            user.setDoubletCount(0);
-            user.setInJail();
-            GoTo(user.getId(), 10);
+            if (user.getInJail() == 0)
+            {
+                user.cellId = 10;
+                user.setDoubletCount(0);
+                user.setInJail();
+                GoTo(user.getId(), 10);
+            } else
+            {
+                user.increaseJail();
+            }
         }
 
         //spr czy to pole do kogoś należy
@@ -141,10 +147,7 @@ namespace WindowsFormsApp1
                 case 5
                     :
                     MessageBox.Show("Darmowe wyjście z Więzienia!\nCo za Szczęście!");
-                    if(player.getCellId()==30)
-                    {
-                        player.decreseJail();//not sure bout that one...
-                    }
+                    player.decreseJail();
                     break;
             }
         }
