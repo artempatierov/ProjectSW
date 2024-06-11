@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
         //Potrzebuję wyciągnąć Label.Text i przypisać do nazwy Property
         public static string[] GetPropNameTable()
         {
-            string[] property_names = new string[28];
+            string[] property_names = new string[40];
             string name = "property";
             for (int i = 0; i < 28; i++)
             {
