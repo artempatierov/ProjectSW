@@ -171,9 +171,11 @@ namespace WindowsFormsApp1
         public static void NextPlayer()
         {
             var p_Manager = PlayersManager.m_playersManager;
+            var b_Manager = BoardManager.m_boardManager;
             int index = p_Manager.getCurrentPlayerIndex();
             index++;
             p_Manager.setCurrentPlayerIndex(index % 4);
+            b_Manager.ShowPlayersProperties(p_Manager.getCurrentPlayerIndex());
         }
         public static void PrintDetails()
         {

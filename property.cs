@@ -54,7 +54,11 @@ namespace WindowsFormsApp1
 
 
         public bool getVisible(Label label) { return label.Visible; }
-        public void setVisible(bool yay_or_nay) { label.Visible= yay_or_nay; }
+        public void setVisible(bool yay_or_nay)
+        {
+            if (label != null)
+            { label.Visible = yay_or_nay; }
+        }
         /*
                 public void Buy(Property property, Player player)
                 {

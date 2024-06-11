@@ -69,5 +69,20 @@ namespace WindowsFormsApp1
                 Action.GoToJail(player);
             }
         }
+
+        public void ShowPlayersProperties(int userId)
+        {
+            foreach (Cell cell in cells)
+            {
+                Property property = cell.getPropertyInfo();
+                if (property != null && property.getPlayerOwnerId() == userId)
+                {
+                    property.setVisible(true);
+                } else if (property != null)
+                {
+                    property.setVisible(false);
+                }
+            }
+        }
     }
 }
