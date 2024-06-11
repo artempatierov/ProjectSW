@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public Cell(int id)
         {
             var ui = WindowsFormsApp1.GUI.UI;
-            var pr_Manager = PropertyManager.m_PropertyManager;
+            //var pr_Manager = PropertyManager.m_propertyManager;
 
             this.id = id;
             if (id == 0 || id == 10 || id == 20 || id == 30 )

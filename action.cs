@@ -34,9 +34,9 @@ namespace WindowsFormsApp1
         //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
         //jeśli wykracza to nie można kupić
         //jeśli nie to pole kupione
-        public static void BuyProperty(Cell pole, Player user,Property property)
+        public static void BuyProperty(Cell pole, Player user, Property property)
         {
-        if(user.getCellId()==pole.getId() && pole.getId()==property.getPropId())//Czy gracz stoi na polu
+            if (user.getCellId() == pole.getId() && pole.getId() == property.getPropId())//Czy gracz stoi na polu
             {
                 if (property.getPlayerOwnerId() == -1)//Czy pole jest niczyje
                 {
@@ -54,13 +54,13 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    if(property.getPlayerOwnerId() == user.getId())
-                    MessageBox.Show("Pole należy do: "+user.getName());
+                    if (property.getPlayerOwnerId() == user.getId())
+                        MessageBox.Show("Pole należy do: " + user.getName());
                 }
             }
         }
 
-        public static void PropertySwap(Player player1,Player player2,Property property1, Property property2)
+        public static void PropertySwap(Player player1, Player player2, Property property1, Property property2)
         {
 
         }
@@ -70,12 +70,83 @@ namespace WindowsFormsApp1
         {
             int kosc_1 = random.Next(1, 6);
             int kosc_2 = random.Next(1, 6);
-            if(kosc_1 == kosc_2)
+            if (kosc_1 == kosc_2)
             {
                 Console.WriteLine("Dublet!");
                 return (kosc_1 + kosc_2) * -1;
             }
             return kosc_1 + kosc_2;
+        }
+
+        public static void RollChest()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            int los = random.Next(1, 5);
+            switch (los) {
+                case 1
+                    : MessageBox.Show("Przejdz na pole \"Wizyta w więzieniu\"");
+                    GoTo(player.getId(), 10);
+                    break;
+                case 2
+                    :
+                    MessageBox.Show("Przejdz na pole \"Start\"");
+                    GoTo(player.getId(), 1);
+                    break;
+                case 3
+                    :
+                    MessageBox.Show("Otrzymujesz zwrot podatku!\n100 dolarów trafia na twoje konto!");
+                    player.addMoney(100);
+                    break;
+                case 4
+                    :
+                    MessageBox.Show("Płacisz za Fryzjera!\n50 dolarów znika z twojego konta!\"");
+                    player.removeMoney(50);
+                    break;
+                case 5
+                    :
+                    MessageBox.Show("Idziesz do Więzienia!\nCo za pech!");
+                    GoToJail(player);
+                    break;
+            }
+        }
+
+        public static void RollChance()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            int los = random.Next(1, 5);
+            switch (los)
+            {
+                case 1
+                    :
+                    MessageBox.Show("Przejdz na pole \"Kolei Penn\"");
+                    GoTo(player.getId(), 15);
+                    break;
+                case 2
+                    :
+                    MessageBox.Show("Przejdz na pole \"Wodociągi\"");
+                    GoTo(player.getId(), 28);
+                    break;
+                case 3
+                    :
+                    MessageBox.Show("Otrzymujesz spadek po krewnym!\n1000 dolarów trafia na twoje konto!");
+                    player.addMoney(1000);
+                    break;
+                case 4
+                    :
+                    MessageBox.Show("Twoje dziecko zachorowało!\n500 dolarów znika z twojego konta!\"");
+                    player.removeMoney(500);
+                    break;
+                case 5
+                    :
+                    MessageBox.Show("Darmowe wyjście z Więzienia!\nCo za Szczęście!");
+                    if(player.getCellId()==30)
+                    {
+                        player.decreseJail();//not sure bout that one...
+                    }
+                    break;
+            }
         }
 
         public static void NextPlayer()
@@ -85,12 +156,17 @@ namespace WindowsFormsApp1
             index++;
             p_Manager.setCurrentPlayerIndex(index % 4);
         }
-        public void PrintDetails(Property property, Player user)
+        public void PrintDetails()
         {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var prop_Manager = PropertyManager.m_propertyManager;
+            Property property = prop_Manager.findPropertyById(prop_Manager.getCurrentPropertyIndex());
+            //Zamiast dodawać property i usera jako argumenty to moge ich wyciągnąc za pomocą managerów :D
             MessageBox.Show("---Właściwości Posiadłości---" +
                 "\nNazwa:" + property.getPropName() +
                 "\nCena podstawowa:" + property.getPropPrice() +
-                "\nWłaściciel:" + user.getName() +
+                "\nWłaściciel:" + player.getName() +
                 "\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
                 );
         }

@@ -36,6 +36,19 @@ namespace WindowsFormsApp1
             return null;
         }
 
+        public static Label GetLabelByTabId(int id)//przepatruje kontrolki w poszukiwaniu odpowiedniej po zmiennej Name
+        {
+            var ui = GUI.UI;
+            foreach (Control control in ui.Controls)
+            {
+                if (control.TabIndex == id)
+                {
+                    return control as Label;
+                }
+            }
+            return null;
+        }
+
         public static void LoadMoney()
         {
             var p_Manager = PlayersManager.m_playersManager;
@@ -50,9 +63,9 @@ namespace WindowsFormsApp1
         //Potrzebuję wyciągnąć Label.Text i przypisać do nazwy Property
         public static string[] GetPropNameTable()
         {
-            string[] property_names = new string[22];
+            string[] property_names = new string[40];
             string name = "property";
-            for (int i = 0; i < 22; i++)
+            for (int i = 0; i < 40; i++)
             {
                 Label property_number = GetLabelByName(name + (i + 1).ToString());//znajdz property Label po kontrolce label.name
                 property_names[i] = property_number.Text;

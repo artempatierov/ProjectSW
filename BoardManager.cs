@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         public void fillPropertyInfo()
         {
-            var pr_Manager = PropertyManager.m_PropertyManager;
+            var pr_Manager = PropertyManager.m_propertyManager;
             for (int i = 0; i < 40; i++)
             {
                 if (findCellById(i).getCellType() == Cell.fieldType.Property)
@@ -57,14 +57,13 @@ namespace WindowsFormsApp1
             else if (cell.getCellType() == Cell.fieldType.Chance)
             {
                 // show chance
+                Action.RollChance();
             }
             else if (cell.getCellType() == Cell.fieldType.Chest)
             {
                 // show Chest
+                Action.RollChest();
             }
-
-
-
 
             if (cellId == 30)
             {
