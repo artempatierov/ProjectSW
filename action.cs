@@ -42,6 +42,7 @@ namespace WindowsFormsApp1
             var b_Manager = BoardManager.m_boardManager;
             Cell pole = b_Manager.findCellById(user.getCellId());
             Property property = pole.getPropertyInfo();
+            Console.WriteLine("<Action:BuyProperty> userId: " + user.getId() + " cellId: " + user.getCellId());
 
             if (property != null)
             {
@@ -177,16 +178,19 @@ namespace WindowsFormsApp1
         public static void PrintDetails()
         {
             var p_Manager = PlayersManager.m_playersManager;
-            Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
-            var prop_Manager = PropertyManager.m_propertyManager;
-            Property property = prop_Manager.findPropertyById(prop_Manager.getCurrentPropertyIndex());
-            
-            MessageBox.Show("---Właściwości Posiadłości---" +
-                "\nNazwa:" + property.getPropName() +
-                "\nCena podstawowa:" + property.getPropPrice() +
-                "\nWłaściciel:" + player.getName() +
-                "\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
-                );
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            if (property != null)
+            {
+                MessageBox.Show("---Właściwości Posiadłości---" +
+                    "\nNazwa:" + property.getPropName() +
+                    "\nCena podstawowa:" + property.getPropPrice() +
+                    "\nWłaściciel:" + user.getName() +
+                    "\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
+                    );
+            }
         }
         public static bool ProcessMove()
         {

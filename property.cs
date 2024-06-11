@@ -26,7 +26,8 @@ namespace WindowsFormsApp1
             this.upgrade_level = 0;
             this.upgrade_price = price * 0.25;
             this.player_owner_id = -1;
-            label = Extensions.GetLabelByTabId(id+100);
+            int tabLabelId = id + 100;
+            label = Extensions.GetLabelByTabId(tabLabelId);
         }
 
         public int getPropId() { return id; }
