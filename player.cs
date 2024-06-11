@@ -57,6 +57,8 @@ namespace WindowsFormsApp1
 
         public void addDoublet() {  doubletCount++; }
 
+        public void setCellId(int id) { cellId = id; }
+
         public int getInJail() {  return inJail; }
 
         public void setInJail() { inJail = 2; }
@@ -70,16 +72,13 @@ namespace WindowsFormsApp1
             }
             return false;
         }
-
         public void addFreeJailExit()
         {
             inJail--;
         }
-
         public void increaseJail()
         {
             inJail++;
         }
-
     }
 }

@@ -18,21 +18,16 @@ namespace WindowsFormsApp1
             System.Windows.Forms.PictureBox userObj = PlayersManager.playerToObject(user);
             Cell cell = b_Manager.findCellById(cellId);
             System.Windows.Forms.PictureBox cellObj = BoardManager.cellToObject(cell);
-            ui.GoTo(userObj, cellObj);
+            user.setCellId(cellId);
+            ui.GoToGui(userObj, cellObj);
         }
 
         public static void GoToJail(Player user)
         {
-            if (user.getInJail() == 0)
-            {
-                user.cellId = 10;
-                user.setDoubletCount(0);
-                user.setInJail();
-                GoTo(user.getId(), 10);
-            } else
-            {
-                user.increaseJail();
-            }
+            user.cellId = 10;
+            user.setDoubletCount(0);
+            user.setInJail();
+            GoTo(user.getId(), 10);
         }
 
         //spr czy to pole do kogoś należy
@@ -40,9 +35,15 @@ namespace WindowsFormsApp1
         //jeśli nie, to sprawdzić czy cena pola nie wykracza poza saldo gracza
         //jeśli wykracza to nie można kupić
         //jeśli nie to pole kupione
-        public static void BuyProperty(Cell pole, Player user, Property property)
+        public static void BuyProperty()
         {
-            if (user.getCellId() == pole.getId() && pole.getId() == property.getPropId())//Czy gracz stoi na polu
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+
+            if (property != null)
             {
                 if (property.getPlayerOwnerId() == -1)//Czy pole jest niczyje
                 {
@@ -55,19 +56,28 @@ namespace WindowsFormsApp1
                         property.setPlayerOwnerId(user.getId());
                         user.removeMoney(property.getPropPrice());
                         MessageBox.Show("Pole Zakupione");
-                        property.setVisible(true);
+                        property.setVisible(true);//Do przerobienia
                     }
                 }
                 else
                 {
-                    if (property.getPlayerOwnerId() == user.getId())
-                        MessageBox.Show("Pole należy do: " + user.getName());
+                    MessageBox.Show("Pole należy do: " + user.getName());
                 }
             }
+            else
+            {
+                MessageBox.Show("Tego pola nie da się kupić!");
+            }
+            
         }
 
-        public static void PropertySwap(Player player1, Player player2, Property property1, Property property2)
+        public static void PropertySwap()
         {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user1 = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole1 = b_Manager.findCellById(user1.getCellId());
+
 
         }
 
@@ -86,6 +96,7 @@ namespace WindowsFormsApp1
 
         public static void RollChest()
         {
+            MessageBox.Show("Wylosuj Kartę!", "", MessageBoxButtons.OK);
             var p_Manager = PlayersManager.m_playersManager;
             Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             int los = random.Next(1, 5);
@@ -97,7 +108,7 @@ namespace WindowsFormsApp1
                 case 2
                     :
                     MessageBox.Show("Przejdz na pole \"Start\"");
-                    GoTo(player.getId(), 1);
+                    GoTo(player.getId(), 0);
                     break;
                 case 3
                     :
@@ -119,6 +130,7 @@ namespace WindowsFormsApp1
 
         public static void RollChance()
         {
+            MessageBox.Show("Wylosuj Kartę!", "", MessageBoxButtons.OK);
             var p_Manager = PlayersManager.m_playersManager;
             Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             int los = random.Next(1, 5);
@@ -147,7 +159,10 @@ namespace WindowsFormsApp1
                 case 5
                     :
                     MessageBox.Show("Darmowe wyjście z Więzienia!\nCo za Szczęście!");
-                    player.addFreeJailExit();
+                    if(player.getInJail()<=0)
+                    {
+                        player.addFreeJailExit();
+                    }
                     break;
             }
         }
@@ -159,13 +174,13 @@ namespace WindowsFormsApp1
             index++;
             p_Manager.setCurrentPlayerIndex(index % 4);
         }
-        public void PrintDetails()
+        public static void PrintDetails()
         {
             var p_Manager = PlayersManager.m_playersManager;
             Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             var prop_Manager = PropertyManager.m_propertyManager;
             Property property = prop_Manager.findPropertyById(prop_Manager.getCurrentPropertyIndex());
-            //Zamiast dodawać property i usera jako argumenty to moge ich wyciągnąc za pomocą managerów :D
+            
             MessageBox.Show("---Właściwości Posiadłości---" +
                 "\nNazwa:" + property.getPropName() +
                 "\nCena podstawowa:" + property.getPropPrice() +

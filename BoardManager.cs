@@ -56,12 +56,10 @@ namespace WindowsFormsApp1
             }
             else if (cell.getCellType() == Cell.fieldType.Chance)
             {
-                // show chance
                 Action.RollChance();
             }
             else if (cell.getCellType() == Cell.fieldType.Chest)
             {
-                // show Chest
                 Action.RollChest();
             }
 

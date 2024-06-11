@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 
         public Player findPlayerById(int userId)
         {
-            //var ui = WindowsFormsApp1.GUI.UI;
+            var ui = WindowsFormsApp1.GUI.UI;
             Console.WriteLine("findPlayerById: " + userId);
             if (players[userId] != null)
             {

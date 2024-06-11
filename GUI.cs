@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             Extensions.LoadMoney();
         }
 
-        public void GoTo(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
+        public void GoToGui(System.Windows.Forms.PictureBox user, System.Windows.Forms.PictureBox cell)
         {
             int x = cell.Location.X;
             int y = cell.Location.Y;
@@ -55,12 +55,12 @@ namespace WindowsFormsApp1
 
         private void info_Click(object sender, EventArgs e)
         {
-            //Action.PrintDetails(); <-- do poprawy
+            Action.PrintDetails();
         }
 
         private void buy_Click(object sender, EventArgs e)
         {
-            //Action.BuyProperty();
+            Action.BuyProperty();
         }
     }
 }
