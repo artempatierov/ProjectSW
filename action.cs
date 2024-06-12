@@ -8,6 +8,10 @@ namespace WindowsFormsApp1
 {
     internal class Action
     {
+        public Action()
+        {
+            setPlayersStartPosition();
+        }
         public static void GoTo(int userId, int cellId)
         {
             Console.WriteLine("<Action:GoTo> userId: " + userId + " to position: " + cellId);
@@ -28,6 +32,18 @@ namespace WindowsFormsApp1
             user.setDoubletCount(0);
             user.setInJail();
             GoTo(user.getId(), 10);
+        }
+
+        public static void setPlayersStartPosition()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+
+            for (int i = 0; i < 4; i++)
+            {
+                p_Manager.setCurrentPlayerIndex(i);
+                GoTo(i, 0);
+            }
+            p_Manager.setCurrentPlayerIndex(0);
         }
 
         //spr czy to pole do kogoś należy
