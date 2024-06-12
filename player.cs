@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
             this.id = id;
             setMoney(1500);
             setName(id);
+            cellId = 0;
         }
         public int getId() { return id; }
 

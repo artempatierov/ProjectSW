@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
                 Cell cell = b_Manager.findCellById(i);
                 if (cell.getCellType() == Cell.fieldType.Property)
                 {
-                    properties[i] = new Property(i, nazwy[j], i * 50 + i * 100 / 2);
+                    properties[i] = new Property(i, nazwy[j], i * 25 + 25);
                     j++;
                 }
                 else

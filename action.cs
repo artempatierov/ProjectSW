@@ -88,7 +88,27 @@ namespace WindowsFormsApp1
             
         }
 
-        public static void PropertySwap()
+        public static void PayRent()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player current_user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(current_user.getCellId());
+
+            Property property = pole.getPropertyInfo();
+            Player owner_user = p_Manager.findPlayerById(property.getPlayerOwnerId());
+
+            if(property.getPlayerOwnerId()!=-1)
+            {
+                string info = "Opłata dla " + owner_user.getName() + " za postój wynosi:\n" + property.getRentPrice();
+                MessageBox.Show(info, "", MessageBoxButtons.OK);
+                current_user.removeMoney(property.getRentPrice());
+                owner_user.addMoney(property.getRentPrice());
+            }
+        }
+
+/*        public static void PropertySwap()
         {
             var p_Manager = PlayersManager.m_playersManager;
             Player user1 = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
@@ -96,7 +116,7 @@ namespace WindowsFormsApp1
             Cell pole1 = b_Manager.findCellById(user1.getCellId());
 
 
-        }
+        }*/
 
         static Random random = new Random();
         public static int RollDice()
@@ -202,11 +222,20 @@ namespace WindowsFormsApp1
             Property property = pole.getPropertyInfo();
             if (property != null)
             {
-                MessageBox.Show("---Właściwości Posiadłości---" +
-                    "\nNazwa:" + property.getPropName() +
-                    "\nCena podstawowa:" + property.getPropPrice() +
-                    "\nWłaściciel:" + user.getName() +
-                    "\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
+                string owner;
+                if (property.getPlayerOwnerId() != -1)
+                {
+                    owner = user.getName();
+                }
+                else
+                {
+                    owner = "Pole niczyje";
+                }
+                MessageBox.Show("----Właściwości Posiadłości----" +
+                    "\n\nNazwa: " + property.getPropName() +
+                    "\n\nCena podstawowa: " + property.getPropPrice() +
+                    "\n\nWłaściciel: " + owner +
+                    "\n\nCena następnego ulepszenia: " + property.getPropUpgradePrice()
                     );
             }
         }
@@ -216,11 +245,6 @@ namespace WindowsFormsApp1
             int wynik = -1;
             var p_Manager = PlayersManager.m_playersManager;
             var b_Manager = BoardManager.m_boardManager;
-
-            if (p_Manager.getCurrentPlayerIndex() == -1)
-            {
-                p_Manager.setCurrentPlayerIndex(0);
-            }
 
             Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             if (user.getDoubletCount() == 0) { 
