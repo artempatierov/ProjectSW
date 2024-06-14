@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Tego pola nie da się kupić!");
             }
-            
+
         }
 
         public static void PayRent()
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
             Property property = pole.getPropertyInfo();
             Player owner_user = p_Manager.findPlayerById(property.getPlayerOwnerId());
 
-            if(property.getPlayerOwnerId()!=-1)
+            if (property.getPlayerOwnerId() != -1)
             {
                 string info = "Opłata dla " + owner_user.getName() + " za postój wynosi:\n" + property.getRentPrice();
                 MessageBox.Show(info, "", MessageBoxButtons.OK);
@@ -108,15 +108,15 @@ namespace WindowsFormsApp1
             }
         }
 
-/*        public static void PropertySwap()
-        {
-            var p_Manager = PlayersManager.m_playersManager;
-            Player user1 = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
-            var b_Manager = BoardManager.m_boardManager;
-            Cell pole1 = b_Manager.findCellById(user1.getCellId());
+        /*        public static void PropertySwap()
+                {
+                    var p_Manager = PlayersManager.m_playersManager;
+                    Player user1 = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+                    var b_Manager = BoardManager.m_boardManager;
+                    Cell pole1 = b_Manager.findCellById(user1.getCellId());
 
 
-        }*/
+                }*/
 
         static Random random = new Random();
         public static int RollDice()
@@ -137,9 +137,11 @@ namespace WindowsFormsApp1
             var p_Manager = PlayersManager.m_playersManager;
             Player player = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             int los = random.Next(1, 5);
-            switch (los) {
+            switch (los)
+            {
                 case 1
-                    : MessageBox.Show("Przejdz na pole \"Wizyta w więzieniu\"");
+                    :
+                    MessageBox.Show("Przejdz na pole \"Wizyta w więzieniu\"");
                     GoTo(player.getId(), 10);
                     break;
                 case 2
@@ -196,11 +198,92 @@ namespace WindowsFormsApp1
                 case 5
                     :
                     MessageBox.Show("Darmowe wyjście z Więzienia!\nCo za Szczęście!");
-                    if(player.getInJail()<=0)
+                    if (player.getInJail() <= 0)
                     {
                         player.addFreeJailExit();
                     }
                     break;
+            }
+        }
+
+        public static void auction(Cell cell)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            int currentActualPlayer = p_Manager.getCurrentPlayerIndex();
+            int currentPlayer = p_Manager.getCurrentPlayerIndex();
+            Property property = cell.getPropertyInfo();
+            double currentPrice = 0.0;
+
+            //Player[] players = p_Manager.GetPlayers();
+            bool[] activePlayers = new bool[4] {true, true, true, true};
+            int activePlayersCount = 4;
+
+            while (true)
+            {
+                for (int i = 0; i < activePlayersCount; i++)
+                {
+                    Player user = p_Manager.findPlayerById(currentPlayer);
+
+                    string caption = "Licytacja za " + property.getPropName();
+                    string info = "Your Turn " + user.getName() + "\n\nCena pierwotna: " + property.getPropPrice() + "\n Cena aktualna: " + currentPrice + "\n\n Wciśnij 'Tak' jeżeli chcesz podbić cenę o 50 $ \n Wciśnij 'Nie' jak chcesz wyjść z licytacji";
+
+                    if (activePlayersCount == 1)
+                    {
+                        if(currentPrice == 0)
+                        {
+                            MessageBox.Show("Ale pole śmierdzi nikt go nie chce :/", caption);
+                            p_Manager.setCurrentPlayerIndex(currentActualPlayer);
+                            return;
+                        }
+                        caption = "Licytacja za " + property.getPropName();
+                        if (user.getMoney() >= currentPrice)
+                        {
+                            MessageBox.Show("Wygrałeś " + user.getName() + "!!!\n\nCena pierwotna: " + property.getPropPrice() + "\n Cena aktualna: " + currentPrice, caption);
+                            property.setPlayerOwnerId(user.getId());
+                            user.removeMoney(currentPrice);
+                        } else
+                        {
+                            MessageBox.Show("Koniec licytacji, nikt nie wygrał :/", caption);
+                        }
+                        p_Manager.setCurrentPlayerIndex(currentActualPlayer);
+                        return;
+                    }
+
+
+                    if (MessageBox.Show(info, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (user.getMoney() > currentPrice)
+                        {
+                            currentPrice += 50;
+                        } else
+                        {
+                            MessageBox.Show("Nie masz tyle siana stary XD Elo");
+                            activePlayersCount--;
+                            activePlayers[currentPlayer] = false;
+                        }
+                    }
+                    else
+                    {
+                        activePlayersCount--;
+                        activePlayers[currentPlayer] = false;
+                    }
+
+                    if(activePlayersCount == 0)
+                    {
+                        p_Manager.setCurrentPlayerIndex(currentActualPlayer);
+                        return;
+                    }
+
+                    while (true)
+                    {
+                        currentPlayer++;
+                        currentPlayer %= 4;
+                        if (activePlayers[currentPlayer] == true)
+                        {
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -247,7 +330,8 @@ namespace WindowsFormsApp1
             var b_Manager = BoardManager.m_boardManager;
 
             Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
-            if (user.getDoubletCount() == 0) { 
+            if (user.getDoubletCount() == 0)
+            {
                 NextPlayer();
                 user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
             }

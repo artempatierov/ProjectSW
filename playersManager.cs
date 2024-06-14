@@ -17,6 +17,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        public Player[] GetPlayers()
+        {
+            return players;
+        }
+
         public void setCurrentPlayerIndex(int index)
         {
             g_CurrentPlayerIndex = index;

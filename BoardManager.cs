@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        //LICYTACJA_TIME!!!
+                        Action.auction(cell);
                     }
                 }
                 else
