@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         int upgrade_level;
         double upgrade_price;
         int player_owner_id;
+        double rent;
         Label label;
 
         public Property(int id,string name, double price)
@@ -24,8 +25,9 @@ namespace WindowsFormsApp1
             this.name = name;
             this.price = price;
             this.upgrade_level = 0;
-            this.upgrade_price = price * 0.25;
+            this.upgrade_price = price * 0.50;
             this.player_owner_id = -1;
+            this.rent = price*0.10;
             int tabLabelId = id + 100;
             label = Extensions.GetLabelByTabId(tabLabelId);
         }
@@ -46,7 +48,7 @@ namespace WindowsFormsApp1
 
 
         public double getPropUpgradePrice() { return upgrade_price; }
-        public void setPropUpgradePrice() { upgrade_price = this.upgrade_price * 1.25; }
+        public void setPropUpgradePrice() { upgrade_price = this.upgrade_price * 1.20; }
 
 
         public int getPlayerOwnerId() { return player_owner_id; }
@@ -59,6 +61,8 @@ namespace WindowsFormsApp1
             if (label != null)
             { label.Visible = yay_or_nay; }
         }
+
+        public double getRentPrice() { return rent; }
         /*
                 public void Buy(Property property, Player player)
                 {

@@ -49,6 +49,7 @@ namespace WindowsFormsApp1
             var p_Manager = PlayersManager.m_playersManager;
             int currentUserIndex = p_Manager.getCurrentPlayerIndex();
             Player player = p_Manager.findPlayerById (currentUserIndex);
+            Property property = cell.getPropertyInfo();
 
             if (cell.getCellType() == Cell.fieldType.Tax)
             {
@@ -62,6 +63,26 @@ namespace WindowsFormsApp1
             {
                 Action.RollChest();
             }
+            else if (cell.getCellType() == Cell.fieldType.Property)
+            {
+                if (property.getPlayerOwnerId()==-1)
+                {
+                    string info= "Pole niczyje,\n Można je zakupić za: " + property.getPropPrice();
+                    if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Action.BuyProperty();
+                    }
+                    else
+                    {
+                        //LICYTACJA_TIME!!!
+                    }
+                }
+                else
+                {
+                    Action.PayRent();
+                }
+            }
+            
 
             if (cellId == 30)
             {

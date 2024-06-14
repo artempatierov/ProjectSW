@@ -761,7 +761,7 @@
             this.player.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player.BackColor = System.Drawing.Color.Crimson;
-            this.player.Location = new System.Drawing.Point(1372, 920);
+            this.player.Location = new System.Drawing.Point(1252, 792);
             this.player.Margin = new System.Windows.Forms.Padding(2);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(25, 25);
@@ -773,7 +773,7 @@
             this.bot_1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bot_1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bot_1.Location = new System.Drawing.Point(1401, 891);
+            this.bot_1.Location = new System.Drawing.Point(1281, 763);
             this.bot_1.Margin = new System.Windows.Forms.Padding(2);
             this.bot_1.Name = "bot_1";
             this.bot_1.Size = new System.Drawing.Size(25, 25);
@@ -785,7 +785,7 @@
             this.bot_2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bot_2.BackColor = System.Drawing.Color.Green;
-            this.bot_2.Location = new System.Drawing.Point(1372, 891);
+            this.bot_2.Location = new System.Drawing.Point(1252, 763);
             this.bot_2.Margin = new System.Windows.Forms.Padding(2);
             this.bot_2.Name = "bot_2";
             this.bot_2.Size = new System.Drawing.Size(25, 25);
@@ -797,7 +797,7 @@
             this.bot_3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bot_3.BackColor = System.Drawing.Color.Gold;
-            this.bot_3.Location = new System.Drawing.Point(1401, 920);
+            this.bot_3.Location = new System.Drawing.Point(1281, 792);
             this.bot_3.Margin = new System.Windows.Forms.Padding(2);
             this.bot_3.Name = "bot_3";
             this.bot_3.Size = new System.Drawing.Size(25, 25);
@@ -1269,7 +1269,7 @@
             this.money4.Location = new System.Drawing.Point(1482, 783);
             this.money4.Name = "money4";
             this.money4.Size = new System.Drawing.Size(24, 25);
-            this.money4.TabIndex = 106;
+            this.money4.TabIndex = 200;
             this.money4.Text = "0";
             // 
             // money3
