@@ -22,13 +22,47 @@ namespace WindowsFormsApp1
             System.Windows.Forms.PictureBox userObj = PlayersManager.playerToObject(user);
             Cell cell = b_Manager.findCellById(cellId);
             System.Windows.Forms.PictureBox cellObj = BoardManager.cellToObject(cell);
+            if (cellId != 10)
+            {
+                ifStartCrossed(userId, cellId);
+            }
             user.setCellId(cellId);
             ui.GoToGui(userObj, cellObj);
         }
 
+        public static void AddToPosition(int userId, int value)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(userId);
+
+            int currentCellId = user.getCellId();
+            int newCellId = currentCellId + value;
+            newCellId %= 40;
+
+            GoTo(userId, newCellId);
+        }
+
+        public static bool IfCrossed(int userId, int cellId)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(userId);
+
+            return user.getCellId() > cellId;
+        }
+
+        public static void ifStartCrossed(int userId, int celId)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(userId);
+            if (IfCrossed(userId, celId))
+            {
+                Console.WriteLine("<Action:ifStartCrossed> userId: " + userId + " crossed the start ");
+                user.addMoney(200);
+            }
+        }
+
         public static void GoToJail(Player user)
         {
-            user.cellId = 10;
             user.setDoubletCount(0);
             user.setInJail();
             GoTo(user.getId(), 10);
@@ -325,7 +359,6 @@ namespace WindowsFormsApp1
         public static bool ProcessMove()
         {
             Extensions.LoadMoney();
-            int wynik = -1;
             var p_Manager = PlayersManager.m_playersManager;
             var b_Manager = BoardManager.m_boardManager;
 
@@ -340,32 +373,25 @@ namespace WindowsFormsApp1
                 return true;
             }
 
-            wynik = RollDice();
+            int wynik = RollDice();
             if (user.getDoubletCount() == 2)
             {
-                var ui = GUI.UI;
                 MessageBox.Show("3 Dublet, Go To Jail");
                 GoToJail(user);
                 return true;
             }
             if (wynik < 0)
             {
-                user.cellId += (wynik * -1);
+                wynik *= -1;
                 user.addDoublet();
             }
             else
             {
-                user.cellId += wynik;
                 user.setDoubletCount(0);
             }
 
-            if (user.cellId % 40 < user.cellId)
-            {
-                user.addMoney(200);
-            }
-            user.cellId %= 40;
-            GoTo(user.getId(), user.cellId);
-            Cell cell = b_Manager.findCellById(user.cellId);
+            AddToPosition(user.getId(), wynik);
+            Cell cell = b_Manager.findCellById(user.getCellId());
             b_Manager.checkField(cell);
 
             return true;
