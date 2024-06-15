@@ -369,5 +369,313 @@ namespace WindowsFormsApp1
                 Action.UpgradeProperty();
             }
         }
+
+        private void property1_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property2_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property4_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property5_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property6_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property7_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property9_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property10_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property12_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property13_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property14_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property15_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property16_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property17_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property18_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property20_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property22_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property23_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property24_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property25_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property27_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
+
+        private void property28_Click_1(object sender, EventArgs e)
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+            string info = "Ulepszyć za " + property.getPropUpgradePrice();
+            if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Action.UpgradeProperty();
+            }
+        }
     }
 }

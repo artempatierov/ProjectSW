@@ -4,6 +4,7 @@ using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -51,11 +52,27 @@ namespace WindowsFormsApp1
         public void setMoney(double amount) {  money = amount; }
         public void addMoney(double amount) { money += amount; }
 
-        public void removeMoney(double amount) { money -= amount; }
+        public void removeMoney(double amount) {
+            if (this.getMoney() < amount)
+            {
+                string info = "Przegrałeś " + this.getName();
+                MessageBox.Show(info, "", MessageBoxButtons.OK);
+                if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.removeMoney(amount);
+                }
+                else
+                {
+                    Action.Endgame();
+                    return;
+                }
+            }
+            money -= amount; 
+        }
 
         public int getDoubletCount() {  return doubletCount; }
 
-        public void setDoubletCount(int count) {  doubletCount = count; }
+        public void setDoubletCount(int count) {  doubletCount = count; } 
 
         public void addDoublet() {  doubletCount++; }
 

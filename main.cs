@@ -27,5 +27,10 @@ namespace MonopolyGame
             Application.Run(ui);
         }
 
+        static public void GameOver()
+        {
+            Application.Exit();
+        }
+
     }
 }

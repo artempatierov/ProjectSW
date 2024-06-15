@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MonopolyGame;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace WindowsFormsApp1
 {
@@ -119,7 +121,12 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Tego pola nie da się kupić!");
             }
+        }
 
+        public static void Endgame()
+        {
+            MessageBox.Show("Game Over", "Game over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            main.GameOver();
         }
 
         public static void PayRent()
@@ -137,8 +144,25 @@ namespace WindowsFormsApp1
             {
                 string info = "Opłata dla " + owner_user.getName() + " za postój wynosi:\n" + property.getRentPrice();
                 MessageBox.Show(info, "", MessageBoxButtons.OK);
-                current_user.removeMoney(property.getRentPrice());
-                owner_user.addMoney(property.getRentPrice());
+                if (current_user.getMoney() < property.getRentPrice())
+                {
+                    info = "Przegrałeś " + current_user.getName();
+                    MessageBox.Show(info, "", MessageBoxButtons.OK);
+                    if (MessageBox.Show(info, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        PayRent();
+                    }
+                    else
+                    {
+                        Endgame();
+                        return;
+                    }
+                }
+                else
+                {
+                    current_user.removeMoney(property.getRentPrice());
+                    owner_user.addMoney(property.getRentPrice());
+                }
             }
         }
 

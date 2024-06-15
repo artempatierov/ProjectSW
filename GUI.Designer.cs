@@ -1135,6 +1135,7 @@
             this.property1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property1.UseCompatibleTextRendering = true;
             this.property1.Visible = false;
+            this.property1.Click += new System.EventHandler(this.property1_Click_1);
             // 
             // property2
             // 
@@ -1151,6 +1152,7 @@
             this.property2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property2.UseCompatibleTextRendering = true;
             this.property2.Visible = false;
+            this.property2.Click += new System.EventHandler(this.property2_Click_1);
             // 
             // property4
             // 
@@ -1167,6 +1169,7 @@
             this.property4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property4.UseCompatibleTextRendering = true;
             this.property4.Visible = false;
+            this.property4.Click += new System.EventHandler(this.property4_Click_1);
             // 
             // property5
             // 
@@ -1183,6 +1186,7 @@
             this.property5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property5.UseCompatibleTextRendering = true;
             this.property5.Visible = false;
+            this.property5.Click += new System.EventHandler(this.property5_Click_1);
             // 
             // property6
             // 
@@ -1199,6 +1203,7 @@
             this.property6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property6.UseCompatibleTextRendering = true;
             this.property6.Visible = false;
+            this.property6.Click += new System.EventHandler(this.property6_Click_1);
             // 
             // pictureBox24
             // 
@@ -1375,6 +1380,7 @@
             this.property7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property7.UseCompatibleTextRendering = true;
             this.property7.Visible = false;
+            this.property7.Click += new System.EventHandler(this.property7_Click_1);
             // 
             // property9
             // 
@@ -1391,6 +1397,7 @@
             this.property9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property9.UseCompatibleTextRendering = true;
             this.property9.Visible = false;
+            this.property9.Click += new System.EventHandler(this.property9_Click_1);
             // 
             // property10
             // 
@@ -1407,6 +1414,7 @@
             this.property10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property10.UseCompatibleTextRendering = true;
             this.property10.Visible = false;
+            this.property10.Click += new System.EventHandler(this.property10_Click_1);
             // 
             // property12
             // 
@@ -1423,6 +1431,7 @@
             this.property12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property12.UseCompatibleTextRendering = true;
             this.property12.Visible = false;
+            this.property12.Click += new System.EventHandler(this.property12_Click_1);
             // 
             // property13
             // 
@@ -1439,6 +1448,7 @@
             this.property13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property13.UseCompatibleTextRendering = true;
             this.property13.Visible = false;
+            this.property13.Click += new System.EventHandler(this.property13_Click_1);
             // 
             // property14
             // 
@@ -1455,6 +1465,7 @@
             this.property14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property14.UseCompatibleTextRendering = true;
             this.property14.Visible = false;
+            this.property14.Click += new System.EventHandler(this.property14_Click_1);
             // 
             // property15
             // 
@@ -1471,6 +1482,7 @@
             this.property15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property15.UseCompatibleTextRendering = true;
             this.property15.Visible = false;
+            this.property15.Click += new System.EventHandler(this.property15_Click_1);
             // 
             // property16
             // 
@@ -1487,6 +1499,7 @@
             this.property16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property16.UseCompatibleTextRendering = true;
             this.property16.Visible = false;
+            this.property16.Click += new System.EventHandler(this.property16_Click_1);
             // 
             // property17
             // 
@@ -1503,6 +1516,7 @@
             this.property17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property17.UseCompatibleTextRendering = true;
             this.property17.Visible = false;
+            this.property17.Click += new System.EventHandler(this.property17_Click_1);
             // 
             // property18
             // 
@@ -1519,6 +1533,7 @@
             this.property18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property18.UseCompatibleTextRendering = true;
             this.property18.Visible = false;
+            this.property18.Click += new System.EventHandler(this.property18_Click_1);
             // 
             // property20
             // 
@@ -1535,6 +1550,7 @@
             this.property20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property20.UseCompatibleTextRendering = true;
             this.property20.Visible = false;
+            this.property20.Click += new System.EventHandler(this.property20_Click_1);
             // 
             // property22
             // 
@@ -1551,6 +1567,7 @@
             this.property22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property22.UseCompatibleTextRendering = true;
             this.property22.Visible = false;
+            this.property22.Click += new System.EventHandler(this.property22_Click_1);
             // 
             // property23
             // 
@@ -1567,6 +1584,7 @@
             this.property23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property23.UseCompatibleTextRendering = true;
             this.property23.Visible = false;
+            this.property23.Click += new System.EventHandler(this.property23_Click_1);
             // 
             // property24
             // 
@@ -1583,6 +1601,7 @@
             this.property24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property24.UseCompatibleTextRendering = true;
             this.property24.Visible = false;
+            this.property24.Click += new System.EventHandler(this.property24_Click_1);
             // 
             // property25
             // 
@@ -1599,6 +1618,7 @@
             this.property25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property25.UseCompatibleTextRendering = true;
             this.property25.Visible = false;
+            this.property25.Click += new System.EventHandler(this.property25_Click_1);
             // 
             // property27
             // 
@@ -1615,6 +1635,7 @@
             this.property27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property27.UseCompatibleTextRendering = true;
             this.property27.Visible = false;
+            this.property27.Click += new System.EventHandler(this.property27_Click_1);
             // 
             // property28
             // 
@@ -1631,6 +1652,7 @@
             this.property28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.property28.UseCompatibleTextRendering = true;
             this.property28.Visible = false;
+            this.property28.Click += new System.EventHandler(this.property28_Click_1);
             // 
             // property8
             // 
