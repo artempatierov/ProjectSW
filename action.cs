@@ -142,6 +142,33 @@ namespace WindowsFormsApp1
             }
         }
 
+        public static void UpgradeProperty()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+
+            if (user.getId() == property.getPlayerOwnerId())
+            {
+                if (property.getPropUpgradePrice() > user.getMoney())
+                {
+                    MessageBox.Show("Niewystarczające środki!!!");
+                }
+                else
+                {
+                    user.removeMoney(property.getPropUpgradePrice());
+                    property.setPropUpgradePrice();
+                    MessageBox.Show("Pole Ulepszone");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pole należy do: " + user.getName());
+            }
+        }
+
         /*        public static void PropertySwap()
                 {
                     var p_Manager = PlayersManager.m_playersManager;

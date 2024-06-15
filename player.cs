@@ -15,7 +15,8 @@ namespace WindowsFormsApp1
         int doubletCount = 0;
         int inJail = 0;
         public string name;
-        
+        int railroad = 0;
+
         public Player(int id) 
         { 
             this.id = id;
@@ -81,5 +82,8 @@ namespace WindowsFormsApp1
         {
             inJail++;
         }
+
+        public int getRailroad() { return railroad; }
+        public void setRailroad() { railroad += 1; }
     }
 }
