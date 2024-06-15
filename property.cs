@@ -48,7 +48,12 @@ namespace WindowsFormsApp1
 
 
         public double getPropUpgradePrice() { return upgrade_price; }
-        public void setPropUpgradePrice() { upgrade_price = this.upgrade_price * 1.20; }
+        public void setPropUpgradePrice()
+        {
+            price = this.price * 1.20;
+            this.upgrade_price = price * 0.50;
+            this.rent = price * 0.10;
+        }
 
 
         public int getPlayerOwnerId() { return player_owner_id; }
@@ -62,7 +67,33 @@ namespace WindowsFormsApp1
             { label.Visible = yay_or_nay; }
         }
 
-        public double getRentPrice() { return rent; }
+        public double getRentPrice()
+        {
+            var p_Manager = PlayersManager.m_playersManager;
+            Player user = p_Manager.findPlayerById(p_Manager.getCurrentPlayerIndex());
+            var b_Manager = BoardManager.m_boardManager;
+            Cell pole = b_Manager.findCellById(user.getCellId());
+            Property property = pole.getPropertyInfo();
+
+            if (property.getPropId() == 3 || property.getPropId() == 11 || property.getPropId() == 19 || property.getPropId() == 26)
+            {
+                rent = 100 * user.getRailroad();
+                return rent;
+            }
+            if (property.getPropId() == 8 || property.getPropId() == 21)
+            {
+                Random random = new Random();
+                int kosc_1 = random.Next(1, 6);
+                int kosc_2 = random.Next(1, 6);
+                rent = kosc_1 + kosc_2;
+                return rent;
+            }
+            else
+            {
+                rent = property.rent;
+                return rent;
+            }
+        }
         /*
                 public void Buy(Property property, Player player)
                 {
